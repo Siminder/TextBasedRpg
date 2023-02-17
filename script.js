@@ -28,7 +28,7 @@ const killsText = document.querySelector("#killText")
 const spells = [
    {
     name: "Fireball",
-    cost: 200,
+    cost: 5,
     power: 10 
    },
    {
@@ -192,10 +192,10 @@ function AdventureGuild() {
     update(locations[4])
 }
 function quest() {
-text1.innerText = "Kill 5 monster and you will get your reward"
+text1.innerText = "Kill 10 monster and you will get your reward"
 }
 function claimQuest() {
-    if (kills >= 1 && !questCompleted) {
+    if (kills >= 10 && !questCompleted) {
       text1.innerText = "Congrats on completing the quest, here is your reward of 40 gold";
       gold += 40;
       goldText.innerText = gold;
@@ -427,18 +427,3 @@ function pick(guess) {
         }
     }
 }
-
-
-var animatedGif = document.getElementById('animated-gif');
-
-animatedGif.onmouseover = function() {
-  animatedGif.style.animation = 'play 1s steps(10) infinite';
-  setTimeout(function() {
-    animatedGif.style.visibility = 'hidden';
-  }, 1000); // Change this value to delay the disappearance time
-};
-
-animatedGif.onmouseout = function() {
-  animatedGif.style.animation = 'none';
-  animatedGif.style.visibility = 'visible';
-};
